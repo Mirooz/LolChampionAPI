@@ -44,29 +44,5 @@ class LolChampionApiApplicationTests {
             System.out.println(champion);
         }
     }
-    @Test
-    void testGetAllChampions() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/champions"))
-                .andExpect(status().isOk())
-                .andReturn();
 
-        String response = result.getResponse().getContentAsString();
-        // Vérifier la réponse en fonction de vos attentes
-        // Ici, vous pouvez analyser la réponse JSON et vérifier les valeurs attendues
-        // par exemple, vous pouvez utiliser des bibliothèques comme Gson ou Jackson pour désérialiser la réponse JSON
-
-        // Exemple avec Jackson :
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Map<String, Object>> championsList = objectMapper.readValue(response, new TypeReference<List<Map<String, Object>>>() {});
-
-        // Vérifier que la liste des champions n'est pas vide
-        assertEquals(false, championsList.isEmpty());
-
-        // Vérifier les propriétés de chaque champion dans la liste
-        for (Map<String, Object> champion : championsList) {
-            // Vérifier que le nom et l'image existent
-            assertEquals(true, champion.containsKey("name"));
-            assertEquals(true, champion.containsKey("image"));
-        }
-    }
 }

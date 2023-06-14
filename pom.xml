@@ -21,6 +21,12 @@
 
         <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence -->
         <dependency>
+            <groupId>com.scrapper</groupId>
+            <artifactId>ScraperHtmlBatch</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.library</groupId>
             <artifactId>LolModel</artifactId>
             <version>1.0.0</version>
