@@ -1,6 +1,8 @@
 package com.webservice.DTO;
 
-public class ChampionListDTO {
+import com.library.lolmodel.models.Champions;
+
+public class ChampionDTO {
     private String id;
     private Integer key;
     private String name;
@@ -16,6 +18,24 @@ public class ChampionListDTO {
     private Integer infoMagic;
     private Integer infoDifficulty;
     private Integer infoAttack;
+
+    public ChampionDTO(Champions champion) {
+        this.id = champion.getId();
+        this.key = champion.getKey();
+        this.name = champion.getName();
+        this.title = champion.getTitle();
+        this.lore = champion.getLore();
+        this.blurb = champion.getBlurb();
+        this.partype = champion.getPartype();
+        this.imageFullName = champion.getImage().getFullname();
+        this.allytips = champion.getAllytips();
+        this.enemytips = champion.getEnemytips();
+        this.tags = champion.getTags();
+        this.infoDefense = champion.getInfoDefense();
+        this.infoMagic = champion.getInfoMagic();
+        this.infoDifficulty = champion.getInfoDifficulty();
+        this.infoAttack = champion.getInfoAttack();
+    }
 
     public String getId() {
         return id;
@@ -137,24 +157,6 @@ public class ChampionListDTO {
         this.infoAttack = infoAttack;
     }
 
-    @Override
-    public String toString() {
-        return "ChampionListDTO{" +
-                "id='" + id + '\'' +
-                ", key=" + key +
-                ", name='" + name + '\'' +
-                ", title='" + title + '\'' +
-                ", lore='" + lore + '\'' +
-                ", blurb='" + blurb + '\'' +
-                ", partype='" + partype + '\'' +
-                ", imageFullName='" + imageFullName + '\'' +
-                ", allytips=" + allytips +
-                ", enemytips=" + enemytips +
-                ", tags=" + tags +
-                ", infoDefense=" + infoDefense +
-                ", infoMagic=" + infoMagic +
-                ", infoDifficulty=" + infoDifficulty +
-                ", infoAttack=" + infoAttack +
-                '}';
-    }
+
+
 }
