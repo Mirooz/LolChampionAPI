@@ -10,7 +10,7 @@ public class ChampionDTO {
     private String lore;
     private String blurb;
     private String partype;
-    private String imageFullName;
+    private String imageFullname;
     private Object allytips;
     private Object enemytips;
     private Object tags;
@@ -27,7 +27,7 @@ public class ChampionDTO {
         this.lore = champion.getLore();
         this.blurb = champion.getBlurb();
         this.partype = champion.getPartype();
-        this.imageFullName = champion.getImage().getFullname();
+        this.imageFullname = champion.getImage().getFullname();
         this.allytips = champion.getAllytips();
         this.enemytips = champion.getEnemytips();
         this.tags = champion.getTags();
@@ -93,12 +93,12 @@ public class ChampionDTO {
         this.partype = partype;
     }
 
-    public String getImageFullName() {
-        return imageFullName;
+    public String getImageFullname() {
+        return imageFullname;
     }
 
-    public void setImageFullName(String imageFullName) {
-        this.imageFullName = imageFullName;
+    public void setImageFullname(String imageFullname) {
+        this.imageFullname = imageFullname;
     }
 
     public Object getAllytips() {

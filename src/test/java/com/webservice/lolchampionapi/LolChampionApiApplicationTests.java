@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.library.lolmodel.config.DataSourceConfiguration;
 import com.library.lolmodel.models.Champions;
 import com.library.lolmodel.repository.ChampionsRepository;
+import jakarta.persistence.EntityManager;
 import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,13 @@ class LolChampionApiApplicationTests {
     @Autowired
     private ChampionsRepository championsRepository;
     @Autowired
+    private EntityManager entityManager;
+    @Autowired
     private MockMvc mockMvc;
     @Test
     void contextLoads() {
     }
-
-    @Test
+     @Test
     public void printChamps(){
         List<Champions> champions = championsRepository.findAll();
 
@@ -43,6 +45,12 @@ class LolChampionApiApplicationTests {
         for (Champions champion : champions) {
             System.out.println(champion);
         }
+    }
+    @Test
+    public void selectIdChamp(){
+        List<String> list = entityManager.createQuery("SELECT p.id FROM Champions p").getResultList();
+
+        list.forEach(System.out::println);
     }
 
 }
